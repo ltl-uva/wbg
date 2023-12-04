@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["wbgauss"]
+
+[project]
+name = "wbgauss"
+requires-python = ">=3.9"
+version = "0.0.1"
+license = { text = "BSD 3-Clause" }
+dependencies = [
+    "numpy >=1.21.5",
+    "scipy >=1.9.1",
+    "spcdist @ git+https://github.com/deep-spin/sparse_continuous_distributions",
+    "geoopt @ git+https://github.com/geoopt/geoopt",
+]
+
+[project.optional-dependencies]
+torch = ["torch >=1.13.1"]

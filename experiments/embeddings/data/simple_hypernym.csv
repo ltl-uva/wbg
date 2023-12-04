@@ -1,0 +1,12 @@
+child,parent
+animal,entity
+dog,animal
+cat,animal
+bird,animal
+chihuahua,dog
+corgi,dog
+dalmatian,dog
+jaguar,cat
+lion,cat
+parrot, bird
+eagle,bird
