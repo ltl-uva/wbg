@@ -141,7 +141,7 @@ if __name__ == "__main__":
     parser.add_argument("--wbg_loss", default="kl_fy")
 
     args = parser.parse_args()
-    torch.set_default_tensor_type(torch.DoubleTensor)
+    torch.set_default_dtype(torch.float64)
 
     args.name += f".{args.wbg_type}"
 

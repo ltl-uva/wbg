@@ -143,7 +143,7 @@ class PoleWBGaussian(WBGBase):
         )
         self._scale = scale
 
-        super().__init__(self.loc, validate_args=validate_args)
+        super().__init__(self.loc, validate_args=False)
 
     def log_prob(self, x, broadcast_batch=False):
         """log probability of x on the sphere"""
@@ -288,7 +288,7 @@ class EmbeddedWBGaussian(WBGBase):
             validate_args=validate_args,
         )
 
-        super().__init__(self.loc, validate_args=validate_args)
+        super().__init__(self.loc, validate_args=False)
 
     def log_prob(self, x, broadcast_batch=False):
         y = self._to_tangent_space(x)
@@ -343,7 +343,7 @@ class EmbeddedWBGaussian(WBGBase):
     def _to_tangent_space(self, x):
         x = sphere_log(x, self.loc)
         return x
-    
+
     def _from_tangent_space(self, v):
         x = sphere_exp(v, self.loc)
         return x
